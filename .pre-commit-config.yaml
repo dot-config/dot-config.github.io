@@ -1,0 +1,27 @@
+---
+ci:
+  # format compatible with commitlint
+  autoupdate_commit_msg: "chore: pre-commit autoupdate"
+  autoupdate_schedule: monthly
+  autofix_commit_msg: |
+    chore: auto fixes from pre-commit.com hooks
+
+    for more information, see https://pre-commit.ci
+repos:
+  - repo: https://github.com/codespell-project/codespell
+    rev: v2.1.0
+    hooks:
+      - id: codespell
+        exclude: >
+          (?x)^(
+            package-lock.json
+          )$
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    # keep it before markdownlint
+    rev: "v2.5.1"
+    hooks:
+      - id: prettier
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.30.0
+    hooks:
+      - id: markdownlint
