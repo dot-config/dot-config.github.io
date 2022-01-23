@@ -1,3 +1,5 @@
+[![Gitter](https://badges.gitter.im/dot-config/community.svg)](https://gitter.im/dot-config/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+
 # Use .config to store your project configs
 
 The goal of dot-config is to promote standardization of `.config` folder
