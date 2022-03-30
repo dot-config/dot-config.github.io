@@ -1,6 +1,6 @@
-[![Gitter](https://badges.gitter.im/dot-config/community.svg)](https://gitter.im/dot-config/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
-
 # Use .config to store your project configs
+
+[![Gitter](https://badges.gitter.im/dot-config/community.svg)](https://gitter.im/dot-config/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 The goal of dot-config is to promote standardization of `.config` folder
 for storing project specific tool configurations.
@@ -21,4 +21,5 @@ We only extended the concept to project repositories.
 
 ### Do we really need yet another standard?
 
-Dot-config is **not a new standard**, is just an extension of XDG one, one that covers for projects directories in addition to user home directories. It does not contradict with it.
+Dot-config is **not a new standard**, is just an extension of XDG one, one
+that covers for projects directories in addition to user home directories.
