@@ -14,4 +14,12 @@ We only extended the concept to project repositories.
 
 ## Projects already supporting .config at repository level
 
-- [molecule](https://molecule.readthedocs.io/en/latest/)
+- [ansible-lint](https://github.com/ansible/ansible-lint)
+- [molecule](https://github.com/ansible-community/molecule)
+
+
+## Q&A
+
+### Do we really need yet another standard?
+
+Dot-config is **not a new standard**, is just an extension of XDG one, one that covers for projects directories in addition to user home directories. It does not contradict with it.
