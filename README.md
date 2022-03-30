@@ -17,6 +17,7 @@ We only extended the concept to project repositories.
 ## Tools already supporting .config at repository level
 
 - [ansible-lint](https://github.com/ansible/ansible-lint)
+- [ansible-navigator](https://github.com/ansible/ansible-navigator)
 - [doc8](https://github.com/PyCQA/doc8)
 - [molecule](https://github.com/ansible-community/molecule)
 
