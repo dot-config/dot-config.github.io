@@ -12,6 +12,8 @@ Use of `.config` is based on long standing [XDG](https://specifications.freedesk
 standard which promoted the use of `~/.config` for keeping **user settings**.
 We only extended the concept to project repositories.
 
+![social-preview](https://repository-images.githubusercontent.com/449231631/31bc5be9-e2e4-409b-9b0e-f7bce50dfd7a)
+
 ## Projects already supporting .config at repository level
 
 - [ansible-lint](https://github.com/ansible/ansible-lint)
