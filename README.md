@@ -17,7 +17,6 @@ We only extended the concept to project repositories.
 - [ansible-lint](https://github.com/ansible/ansible-lint)
 - [molecule](https://github.com/ansible-community/molecule)
 
-
 ## Q&A
 
 ### Do we really need yet another standard?
