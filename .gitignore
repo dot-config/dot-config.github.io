@@ -127,3 +127,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Jekyll local output and dependencies
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.bundle/
+vendor/

@@ -12,6 +12,8 @@ repos:
     rev: v2.2.2
     hooks:
       - id: codespell
+        # Rouge is the Jekyll syntax-highlighting gem.
+        args: ["--ignore-words-list=rouge"]
         exclude: >
           (?x)^(
             package-lock.json

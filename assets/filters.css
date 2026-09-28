@@ -1,0 +1,15 @@
+---
+layout: null
+---
+/* Language filters follow the tool data automatically. */
+{% assign languages = site.data.tools | map: 'languages' | join: ',' | split: ',' | uniq %}
+@supports selector(:has(*)) {
+  @media screen {
+    {% for language in languages %}
+    {% assign slug = language | slugify %}
+    #tools:has(#language-{{ slug }}:checked) #tool-list tr:not([data-languages~="{{ slug }}"]) {
+      display: none;
+    }
+    {% endfor %}
+  }
+}

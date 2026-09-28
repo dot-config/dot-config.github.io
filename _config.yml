@@ -1,0 +1,10 @@
+title: .config
+url: https://dot-config.github.io
+baseurl: ""
+exclude:
+  - CONTRIBUTING.md
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - vendor

@@ -1,30 +1,29 @@
-# Use .config to store your project configs
+# Let your tool find its config in `.config/`
 
-[![Gitter](https://badges.gitter.im/dot-config/community.svg)](https://gitter.im/dot-config/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+Help projects keep their root directories clear by automatically discovering
+your tool’s configuration in `.config/`. Keep your existing file format and
+configuration locations—just support one more place to look.
 
-The goal of dot-config is to promote standardization of `.config` folder
-for storing project specific tool configurations.
+The proposal is a shared directory convention. Each tool implements its own
+lookup, so users can organize tool settings without adding custom paths to every
+command, editor and CI integration.
 
-By using a subfolder you will help **decluttering project root folder**
-and **isolating configuration** from other project files.
+The name is inspired by XDG’s user configuration directory, `~/.config/`.
+Project-local `.config/` is independent of user settings and is not part of the
+[XDG specification](https://specifications.freedesktop.org/basedir/latest/).
 
-Use of `.config` is based on long standing [XDG](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html)
-standard which promoted the use of `~/.config` for keeping **user settings**.
-We only extended the concept to project repositories.
+## Explore the proposal
 
-![social-preview](https://repository-images.githubusercontent.com/449231631/31bc5be9-e2e4-409b-9b0e-f7bce50dfd7a)
+- [Guidance for tool authors](https://dot-config.github.io/#authors)
+- [Tools with automatic discovery](https://dot-config.github.io/#tools)
+- [Questions and rationale](https://dot-config.github.io/#faq)
 
-## Tools already supporting .config at repository level
+## Contribute
 
-- [ansible-lint](https://github.com/ansible/ansible-lint)
-- [ansible-navigator](https://github.com/ansible/ansible-navigator)
-- [doc8](https://github.com/PyCQA/doc8)
-- [Mill](https://github.com/com-lihaoyi/mill)
-- [molecule](https://github.com/ansible-community/molecule)
+See [CONTRIBUTING.md](CONTRIBUTING.md) for local preview instructions using mise
+and Jekyll, and guidance on updating the website. Tool entries live in
+[`_data/tools.yml`](_data/tools.yml); the site generates the table and language
+filters from that list.
 
-## Q&A
-
-### Do we really need yet another standard?
-
-Dot-config is **not a new standard**, is just an extension of XDG one, one
-that covers for projects directories in addition to user home directories.
+To suggest a tool or discuss the proposal,
+[open an issue](https://github.com/dot-config/dot-config.github.io/issues).

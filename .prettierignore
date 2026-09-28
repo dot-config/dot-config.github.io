@@ -1,0 +1,5 @@
+# These files contain Liquid templates unsupported by the CSS/HTML parser.
+_includes/
+assets/filters.css
+_site/
+vendor/

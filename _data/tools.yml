@@ -1,0 +1,195 @@
+- name: ".NET local tools"
+  languages: ["C# / .NET"]
+  description: "Repository-local tools"
+  paths: [".config/dotnet-tools.json"]
+  reference: "https://learn.microsoft.com/en-us/dotnet/core/tools/global-tools"
+  reference_label: "Docs"
+  note: "Local-tool manifest; not all .NET configuration."
+
+- name: "Air"
+  languages: ["Go"]
+  description: "Live reloading"
+  paths: [".config/air.toml"]
+  reference: "https://github.com/air-verse/air/blob/master/runner/config.go"
+  reference_label: "Source"
+
+- name: "ansible-lint"
+  languages: ["Python", "Ansible / YAML"]
+  description: "Ansible linting"
+  paths: [".config/ansible-lint.yml", ".config/ansible-lint.yaml"]
+  reference: "https://docs.ansible.com/projects/lint/configuring/"
+  reference_label: "Docs"
+
+- name: "Bacon"
+  languages: ["Rust"]
+  description: "Background checks and tests"
+  paths: [".config/bacon.toml"]
+  reference: "https://dystroy.org/bacon/config/"
+  reference_label: "Docs"
+
+- name: "cargo-deny"
+  languages: ["Rust"]
+  description: "Dependency policy checks"
+  paths: [".config/deny.toml"]
+  reference: "https://github.com/EmbarkStudios/cargo-deny/blob/main/src/cargo-deny/common.rs"
+  reference_label: "Source"
+
+- name: "cargo-nextest"
+  languages: ["Rust"]
+  description: "Test runner"
+  paths: [".config/nextest.toml"]
+  reference: "https://nexte.st/docs/configuration/"
+  reference_label: "Docs"
+
+- name: "changelogen"
+  languages: ["JavaScript / TypeScript", "Cross-language"]
+  description: "Changelog generation and releases"
+  paths: [".config/changelog.ts", ".config/changelog.config.ts"]
+  reference: "https://github.com/unjs/changelogen/blob/v0.6.2/src/config.ts"
+  reference_label: "Source"
+  note: "Loaded through c12."
+
+- name: "CSpell"
+  languages: ["JavaScript / TypeScript", "Cross-language"]
+  description: "Code and documentation spelling"
+  paths: [".config/cspell.json", ".config/cspell.config.yaml"]
+  reference: "https://cspell.org/docs/getting-started"
+  reference_label: "Docs"
+
+- name: "doc8"
+  languages: ["Python", "reStructuredText"]
+  description: "reStructuredText checks"
+  paths: [".config/doc8.ini"]
+  reference: "https://github.com/PyCQA/doc8#usage"
+  reference_label: "Docs"
+
+- name: "git-cliff"
+  languages: ["Rust", "Cross-language"]
+  description: "Changelog generation"
+  paths: [".config/cliff.toml"]
+  reference: "https://git-cliff.org/docs/configuration/"
+  reference_label: "Docs"
+
+- name: "GoReleaser"
+  languages: ["Go"]
+  description: "Release automation"
+  paths: [".config/goreleaser.yml", ".config/goreleaser.yaml"]
+  reference: "https://goreleaser.com/customization/"
+  reference_label: "Docs"
+
+- name: "Insta / cargo-insta"
+  languages: ["Rust"]
+  description: "Snapshot testing"
+  paths: [".config/insta.yaml"]
+  reference: "https://github.com/mitsuhiko/insta/blob/master/insta/src/env.rs"
+  reference_label: "Source"
+
+- name: "Lefthook"
+  languages: ["Go", "Cross-language"]
+  description: "Git hook management"
+  paths: [".config/lefthook.yml"]
+  reference: "https://lefthook.dev/configuration/"
+  reference_label: "Docs"
+  note: "Also accepts YAML, TOML, JSON and JSONC variants."
+
+- name: "Mill"
+  languages: ["Java / Scala"]
+  description: "JVM build tooling"
+  paths:
+    - ".config/mill-version"
+    - ".config/mill-opts"
+    - ".config/mill-jvm-version"
+    - ".config/mill-jvm-opts"
+  reference: "https://mill-build.org/mill/cli/build-header.html"
+  reference_label: "Docs"
+  note: "Launcher and JVM settings; not the build definition."
+
+- name: "mise"
+  languages: ["Rust", "Cross-language"]
+  description: "Development tools, environments and tasks"
+  paths: [".config/mise.toml", ".config/mise/config.toml"]
+  reference: "https://mise.jdx.dev/configuration.html"
+  reference_label: "Docs"
+
+- name: "Molecule"
+  languages: ["Python", "Ansible / YAML"]
+  description: "Ansible testing"
+  paths: [".config/molecule/config.yml"]
+  reference: "https://docs.ansible.com/projects/molecule/configuration/#prerun"
+  reference_label: "Docs"
+  note: "Shared project settings supplement scenario configuration."
+
+- name: "Nitro"
+  languages: ["JavaScript / TypeScript"]
+  description: "Server application toolkit"
+  paths: [".config/nitro.ts", ".config/nitro.config.ts"]
+  reference: "https://nitro.build/docs/configuration"
+  reference_label: "Docs"
+
+- name: "Nuxt"
+  languages: ["JavaScript / TypeScript"]
+  description: "Vue application framework"
+  paths: [".config/nuxt.ts", ".config/nuxt.config.ts"]
+  reference: "https://github.com/nuxt/nuxt/blob/main/packages/kit/src/loader/config.ts"
+  reference_label: "Source"
+  note: "Loaded through c12."
+
+- name: "Prisma"
+  languages: ["JavaScript / TypeScript"]
+  description: "Database tooling and ORM"
+  paths: [".config/prisma.ts"]
+  reference: "https://docs.prisma.io/docs/orm/reference/prisma-config-reference"
+  reference_label: "Docs"
+
+- name: "release-it"
+  languages: ["JavaScript / TypeScript", "Cross-language"]
+  description: "Versioning and release automation"
+  paths: [".config/.release-it.json", ".config/.release-it.yaml"]
+  reference: "https://github.com/release-it/release-it/blob/21.1.0/lib/config.js"
+  reference_label: "Source"
+  note: "Keep the leading dot in .release-it; loaded through c12."
+
+- name: "RuboCop"
+  languages: ["Ruby"]
+  description: "Ruby linting and formatting"
+  paths: [".config/.rubocop.yml", ".config/rubocop/config.yml"]
+  reference: "https://docs.rubocop.org/rubocop/latest/configuration.html"
+  reference_label: "Docs"
+
+- name: "rumdl"
+  languages: ["Rust", "Markdown", "Cross-language"]
+  description: "Markdown linting and formatting"
+  paths: [".config/rumdl.toml"]
+  reference: "https://github.com/rvben/rumdl/blob/main/docs/configuration/index.md"
+  reference_label: "Docs"
+
+- name: "semantic-release"
+  languages: ["JavaScript / TypeScript", "Cross-language"]
+  description: "Automated versioning and publishing"
+  paths: [".config/releaserc.json", ".config/releaserc.yaml"]
+  reference: "https://github.com/semantic-release/semantic-release/blob/v25.0.9/lib/get-config.js"
+  reference_label: "Source"
+  note: "Uses Cosmiconfig’s default search locations."
+
+- name: "Stylelint"
+  languages: ["JavaScript / TypeScript", "CSS"]
+  description: "CSS linting"
+  paths: [".config/stylelintrc.json", ".config/stylelintrc.yaml"]
+  reference: "https://github.com/stylelint/stylelint/blob/main/lib/createStylelint.mjs"
+  reference_label: "Source"
+  note: "Uses Cosmiconfig’s default search locations."
+
+- name: "SVGR"
+  languages: ["JavaScript / TypeScript", "SVG"]
+  description: "Convert SVGs to React components"
+  paths: [".config/svgrrc.json", ".config/svgrrc.yaml"]
+  reference: "https://github.com/gregberge/svgr/blob/v8.1.0/packages/core/src/config.ts"
+  reference_label: "Source"
+  note: "Uses Cosmiconfig’s default search locations."
+
+- name: "Tombi"
+  languages: ["Rust", "TOML", "Cross-language"]
+  description: "TOML formatting and linting"
+  paths: [".config/tombi.toml"]
+  reference: "https://tombi-toml.github.io/tombi/docs/configuration/"
+  reference_label: "Docs"

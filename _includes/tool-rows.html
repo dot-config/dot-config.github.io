@@ -1,0 +1,20 @@
+{% assign tools = site.data.tools | sort_natural: 'name' %}
+{% for tool in tools %}
+  <tr data-languages="{% for language in tool.languages %}{{ language | slugify }}{% unless forloop.last %}{{ ' ' }}{% endunless %}{% endfor %}">
+    <th scope="row">
+      {{ tool.name | escape }}
+      <span class="tool-description">{{ tool.description | escape }}</span>
+    </th>
+    <td>
+      {% for path in tool.paths %}
+        <code>{{ path | escape }}</code>{% unless forloop.last %}<br>{% endunless %}
+      {% endfor %}
+      {% if tool.note %}<span class="tool-note">{{ tool.note | escape }}</span>{% endif %}
+    </td>
+    <td>
+      <a href="{{ tool.reference | escape }}" aria-label="{{ tool.name | escape }} configuration {{ tool.reference_label | downcase | escape }}">
+        {{ tool.reference_label | escape }} <span aria-hidden="true">↗</span>
+      </a>
+    </td>
+  </tr>
+{% endfor %}

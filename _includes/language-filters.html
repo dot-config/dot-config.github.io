@@ -1,0 +1,22 @@
+{% assign languages = site.data.tools | map: 'languages' | join: ',' | split: ',' | uniq | sort_natural %}
+<fieldset class="language-filters" aria-describedby="language-help">
+  <legend>Filter by language</legend>
+  <div class="filter-options">
+    <label class="filter-option" for="language-all">
+      <input type="radio" name="language" id="language-all" value="all" checked aria-controls="tool-list">
+      <span>All languages <span class="filter-count">({{ site.data.tools.size }})</span></span>
+    </label>
+    {% for language in languages %}
+      {% assign slug = language | slugify %}
+      {% assign count = 0 %}
+      {% for tool in site.data.tools %}
+        {% if tool.languages contains language %}{% assign count = count | plus: 1 %}{% endif %}
+      {% endfor %}
+      <label class="filter-option" for="language-{{ slug }}">
+        <input type="radio" name="language" id="language-{{ slug }}" value="{{ slug }}" aria-controls="tool-list">
+        <span>{{ language | escape }} <span class="filter-count">({{ count }})</span></span>
+      </label>
+    {% endfor %}
+  </div>
+  <p id="language-help">Filter by implementation language, supported format or ecosystem. Tools can appear in several groups.</p>
+</fieldset>

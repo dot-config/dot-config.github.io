@@ -1,0 +1,458 @@
+---
+layout: null
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      name="theme-color"
+      content="#f7f9f8"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#101413"
+      media="(prefers-color-scheme: dark)"
+    />
+    <meta
+      name="description"
+      content="Help projects reduce root-directory clutter. Let your tool discover its configuration in .config/, using its existing file format."
+    />
+    <title>.config — Project tool configuration</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+    <link rel="stylesheet" href="assets/filters.css" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <svg
+      aria-hidden="true"
+      class="icon-definitions"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        <symbol id="i-folder" viewBox="0 0 24 24">
+          <path
+            d="M3 7V5a1.5 1.5 0 0 1 1.5-1.5H10l2 3h7.5A1.5 1.5 0 0 1 21 8v10.5a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 18.5V7Z"
+          ></path>
+          <path d="M3 8h18"></path>
+        </symbol>
+        <symbol id="i-file" viewBox="0 0 24 24">
+          <path
+            d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8Z"
+          ></path>
+          <path d="M14 3v5h5"></path>
+        </symbol>
+
+        <symbol id="i-chevron" viewBox="0 0 24 24">
+          <path d="m9 5 7 7-7 7"></path>
+        </symbol>
+
+        <symbol id="brand-folder" viewBox="0 0 34 32">
+          <path
+            d="M3 9V6a2 2 0 0 1 2-2h9l3.5 4H29a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"
+            fill="#d9efcb"
+            stroke="#28503a"
+            stroke-width="1.7"
+          ></path>
+          <path d="M3 11h28" stroke="#28503a" stroke-width="1.7"></path>
+          <circle cx="12" cy="20" fill="#28503a" r="2.5" stroke="none"></circle>
+        </symbol>
+      </defs>
+    </svg>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="wrap topbar">
+      <a class="brand" href="#" aria-label=".config home"
+        ><svg class="brand-mark" aria-hidden="true">
+          <use href="#brand-folder" /></svg
+        ><span>.config</span></a
+      >
+      <nav aria-label="Main navigation">
+        <a class="authors-nav" href="#authors">Tool authors</a
+        ><a href="#tools">Tool support</a><a href="#faq">FAQ</a
+        ><a href="https://github.com/dot-config/dot-config.github.io"
+          >GitHub <span aria-hidden="true">↗</span></a
+        >
+      </nav>
+    </header>
+    <main id="main">
+      <section class="wrap hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <h1 id="hero-title">
+            Let your tool find its config in <code>.config/</code>.
+          </h1>
+          <p>
+            Help projects keep their root directories clear by automatically
+            discovering your tool’s configuration in <code>.config/</code>. Keep
+            your existing file format and configuration locations—just support
+            one more place to look.
+          </p>
+          <a class="hero-link" href="#authors"
+            >Add support to your tool <span aria-hidden="true">↓</span></a
+          >
+        </div>
+        <figure>
+          <div
+            class="demo"
+            aria-label="Example project directory before and after moving three configuration files"
+          >
+            <div class="demo-bar">
+              <svg class="icon" aria-hidden="true"><use href="#i-folder" /></svg
+              >example-project/
+            </div>
+            <div class="demo-trees">
+              <div class="tree-panel">
+                <h3>Before</h3>
+                <ul class="tree-rows">
+                  <li class="tree-row">
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#i-folder" /></svg
+                    ><span>.github/</span>
+                  </li>
+                  <li class="tree-row">
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#i-folder" /></svg
+                    ><span>docs/</span>
+                  </li>
+                  <li class="tree-row">
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#i-folder" /></svg
+                    ><span>src/</span>
+                  </li>
+                  <li class="tree-row">
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#i-folder" /></svg
+                    ><span>tests/</span>
+                  </li>
+                  <li class="tree-row config-file">
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#i-file" /></svg
+                    ><span>.ansible-lint</span>
+                  </li>
+                  <li class="tree-row">
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#i-file" /></svg
+                    ><span>.editorconfig</span>
+                  </li>
+                  <li class="tree-row">
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#i-file" /></svg
+                    ><span>.gitignore</span>
+                  </li>
+                  <li class="tree-row config-file">
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#i-file" /></svg
+                    ><span>.mill-version</span>
+                  </li>
+                  <li class="tree-row config-file">
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#i-file" /></svg
+                    ><span>doc8.ini</span>
+                  </li>
+                  <li class="tree-row">
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#i-file" /></svg
+                    ><span>pyproject.toml</span>
+                  </li>
+                  <li class="tree-row">
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#i-file" /></svg
+                    ><span>README.md</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="tree-panel">
+                <h3>With .config/</h3>
+                <div class="tree-rows">
+                  <details class="folder" open>
+                    <summary>
+                      <svg class="icon chevron" aria-hidden="true">
+                        <use href="#i-chevron" /></svg
+                      ><svg class="icon" aria-hidden="true">
+                        <use href="#i-folder" /></svg
+                      ><span>.config/</span>
+                    </summary>
+                    <ul class="config-children">
+                      <li class="tree-row">
+                        <svg class="icon" aria-hidden="true">
+                          <use href="#i-file" /></svg
+                        ><span>ansible-lint.yml</span>
+                      </li>
+                      <li class="tree-row">
+                        <svg class="icon" aria-hidden="true">
+                          <use href="#i-file" /></svg
+                        ><span>doc8.ini</span>
+                      </li>
+                      <li class="tree-row">
+                        <svg class="icon" aria-hidden="true">
+                          <use href="#i-file" /></svg
+                        ><span>mill-version</span>
+                      </li>
+                    </ul>
+                  </details>
+                  <ul class="tree-rows">
+                    <li class="tree-row">
+                      <svg class="icon" aria-hidden="true">
+                        <use href="#i-folder" /></svg
+                      ><span>.github/</span>
+                    </li>
+                    <li class="tree-row">
+                      <svg class="icon" aria-hidden="true">
+                        <use href="#i-folder" /></svg
+                      ><span>docs/</span>
+                    </li>
+                    <li class="tree-row">
+                      <svg class="icon" aria-hidden="true">
+                        <use href="#i-folder" /></svg
+                      ><span>src/</span>
+                    </li>
+                    <li class="tree-row">
+                      <svg class="icon" aria-hidden="true">
+                        <use href="#i-folder" /></svg
+                      ><span>tests/</span>
+                    </li>
+                    <li class="tree-row">
+                      <svg class="icon" aria-hidden="true">
+                        <use href="#i-file" /></svg
+                      ><span>.editorconfig</span>
+                    </li>
+                    <li class="tree-row">
+                      <svg class="icon" aria-hidden="true">
+                        <use href="#i-file" /></svg
+                      ><span>.gitignore</span>
+                    </li>
+                    <li class="tree-row">
+                      <svg class="icon" aria-hidden="true">
+                        <use href="#i-file" /></svg
+                      ><span>pyproject.toml</span>
+                    </li>
+                    <li class="tree-row">
+                      <svg class="icon" aria-hidden="true">
+                        <use href="#i-file" /></svg
+                      ><span>README.md</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <figcaption>
+            One directory for tool configuration. Discovered automatically.
+          </figcaption>
+        </figure>
+      </section>
+      <section
+        id="authors"
+        class="wrap authors"
+        aria-labelledby="authors-title"
+      >
+        <h2 id="authors-title">
+          Add <code>.config/</code> support to your tool
+        </h2>
+        <div>
+          <ol class="author-steps">
+            <li>
+              <strong>Choose a predictable path.</strong> Use a file such as
+              <code>.config/your-tool.yml</code>, or a directory such as
+              <code>.config/your-tool/</code> when several files belong
+              together.
+            </li>
+            <li>
+              <strong>Preserve existing behavior.</strong> Continue supporting
+              current locations and explicit overrides. Decide which file wins
+              when both locations exist, and avoid silently changing the
+              settings an existing project loads.
+            </li>
+            <li>
+              <strong>Document discovery.</strong> Explain how you find the
+              project root, resolve relative paths, and handle nested projects.
+              Check these cases alongside existing configurations.
+            </li>
+          </ol>
+          <h3 class="library-heading">Configuration libraries</h3>
+          <p class="library-intro">
+            Configuration libraries can help:
+            <a href="https://github.com/cosmiconfig/cosmiconfig">Cosmiconfig</a>
+            and <a href="https://github.com/unjs/c12">c12</a> support
+            project-local <code>.config/</code> lookup. Check your loader’s
+            search settings; tools can override the defaults.
+          </p>
+          <a
+            class="author-link"
+            href="https://github.com/dot-config/dot-config.github.io/issues/new"
+            >Already support it? Add your tool to the list
+            <span aria-hidden="true">↗</span></a
+          >
+        </div>
+      </section>
+      <section id="tools" class="wrap support" aria-labelledby="tools-title">
+        <div class="section-head">
+          <h2 id="tools-title">Tools supporting <code>.config/</code></h2>
+          <p>
+            These tools find project configuration in
+            <code>.config/</code> without an explicit config path.
+          </p>
+        </div>
+
+        {% include language-filters.html %}
+
+        <div
+          class="table-scroll"
+          tabindex="0"
+          role="region"
+          aria-label="Tool support table"
+        >
+          <table>
+            <caption class="sr-only">
+              Project-local configuration paths and how tools load them
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Tool</th>
+                <th scope="col">Configuration file</th>
+                <th scope="col">Reference</th>
+              </tr>
+            </thead>
+            <tbody id="tool-list">
+              {% include tool-rows.html %}
+            </tbody>
+          </table>
+        </div>
+        <div class="support-notes">
+          <p>
+            Paths are examples; some tools accept additional filenames and
+            extensions. See the references for versions and precedence.
+          </p>
+          <a
+            href="https://github.com/dot-config/dot-config.github.io/issues/new"
+            >Add a tool <span aria-hidden="true">↗</span></a
+          >
+        </div>
+      </section>
+      <section id="faq" class="wrap faq" aria-labelledby="faq-title">
+        <h2 id="faq-title">Questions &amp; rationale</h2>
+        <details class="faq-item" open>
+          <summary>Why put tool configuration in one directory?</summary>
+          <p>
+            A project can use many tools, each with its own configuration file.
+            Keeping those files together leaves the project root easier to scan
+            for source code, documentation and other project files. Automatic
+            discovery lets users organize their settings without adding custom
+            paths to every command, editor and CI integration.
+          </p>
+        </details>
+        <details class="faq-item">
+          <summary>Do we need another standard or tool?</summary>
+          <p>
+            The proposal is a shared directory convention. Each tool keeps its
+            own configuration format and implements its own lookup; users do not
+            need another tool to manage it. The name is inspired by
+            <a href="https://specifications.freedesktop.org/basedir/latest/"
+              >XDG’s user configuration directory</a
+            >, but project-level <code>.config/</code> is not part of the XDG
+            specification.
+          </p>
+        </details>
+        <details class="faq-item">
+          <summary>What if configuration exists in both locations?</summary>
+          <p>
+            There is no single precedence rule across tools. A tool may select
+            one file, merge settings in a documented order, or report a
+            conflict. Preserve existing behavior and explicit overrides, and
+            explain which settings take effect. See the
+            <a
+              href="https://github.com/dot-config/dot-config.github.io/issues/16"
+              >discussion about conflicting files</a
+            >.
+          </p>
+        </details>
+        <details class="faq-item">
+          <summary>How is this different from <code>~/.config/</code>?</summary>
+          <p>
+            <code>~/.config/</code> holds settings for a user account. A
+            project’s <code>.config/</code> holds settings shared with everyone
+            working on that project and can be committed to version control.
+            Each tool decides how project settings interact with user defaults.
+          </p>
+        </details>
+        <details class="faq-item">
+          <summary>
+            Why <code>.config/</code> instead of <code>config/</code>?
+          </summary>
+          <p>
+            The name borrows a familiar convention for tool settings and leaves
+            an existing application or framework’s
+            <code>config/</code> directory in place. Some projects will have
+            both; the distinction is tool settings versus application
+            configuration. The leading dot does not make a file private or
+            exclude it from version control. This is a convention with
+            tradeoffs, explored in the
+            <a
+              href="https://github.com/dot-config/dot-config.github.io/issues/22"
+              >directory naming discussion</a
+            >.
+          </p>
+        </details>
+        <details class="faq-item">
+          <summary>
+            How should files be named inside <code>.config/</code>?
+          </summary>
+          <p>
+            Use a recognizable tool name. A single file such as
+            <code>.config/tool.toml</code> keeps the layout simple; a directory
+            such as <code>.config/tool/</code> groups related files and can
+            match a tool’s user-level layout. Existing tools use both patterns,
+            including some filenames with a leading dot. Document the paths your
+            tool accepts. The
+            <a
+              href="https://github.com/dot-config/dot-config.github.io/issues/17"
+              >naming discussion</a
+            >
+            remains open.
+          </p>
+        </details>
+        <details class="faq-item">
+          <summary>
+            Do XDG environment variables change the project path?
+          </summary>
+          <p>
+            No. This convention uses <code>.config/</code> within the project,
+            independent of an individual user’s XDG settings. If your tool also
+            loads user or system configuration through XDG, respect
+            <code>XDG_CONFIG_HOME</code> and <code>XDG_CONFIG_DIRS</code> for
+            those locations. Keep that lookup separate from project discovery.
+            See the
+            <a
+              href="https://github.com/dot-config/dot-config.github.io/issues/18"
+              >XDG discussion</a
+            >.
+          </p>
+        </details>
+        <details class="faq-item">
+          <summary>Should every file move out of the project root?</summary>
+          <p>
+            This proposal is for tool settings. Keep manifests, lockfiles and
+            files such as <code>.gitignore</code> and
+            <code>.editorconfig</code> in their expected locations. Move a
+            tool’s configuration only when it supports that location. Caches,
+            temporary files and secrets need their own appropriate storage.
+          </p>
+        </details>
+      </section>
+    </main>
+    <footer class="wrap">
+      <code>.config</code>
+      <div>
+        <a
+          href="https://github.com/dot-config/dot-config.github.io/blob/main/index.html"
+          >Edit this page</a
+        ><a href="https://github.com/dot-config/dot-config.github.io/issues"
+          >Discussion</a
+        >
+      </div>
+    </footer>
+  </body>
+</html>
